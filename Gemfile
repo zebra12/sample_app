@@ -5,7 +5,7 @@ ruby '2.1.1'
 gem 'rails', '4.0.4'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0' #tu byl problem i railsy pokazywaly blad do poki nie updatowalem to tej konkretnej wersji sproskets
-
+gem 'bcrypt' #przy testach po rozdziale dotyczącym validacji hasła, railsy pokazywały że trzba zaistalowac gema bcrypt
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
