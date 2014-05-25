@@ -1,7 +1,10 @@
 SampleApp::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users
   root 'static_pages#home' # odpowiednik match '/home', to: 'static_pages#home', via: 'get' oraz podobne ale nie do konca bo robi patha - get 'static_pages/home' 
-  match '/signup', to: 'users#new', via: 'get'   	
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete' #Note that the routes for signin and signout are custom, but the route for creating a session is simply the default  	
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
